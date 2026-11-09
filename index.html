@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SAKB Global</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="1794229241380_logo.jpg">
 <meta name="description" content="SAKB Global Ltd — quality products, UK stock, and a China sourcing service for wholesalers and brands.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@ em.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0
 header{position:relative;z-index:2}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:26px}
 .mark{display:flex;align-items:center;gap:12px;text-decoration:none}
-.mark .m{width:40px;height:40px;border:1.5px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:24px;color:var(--gold);border-radius:50%}
+.mark .logo{width:60px;height:60px;border-radius:50%;object-fit:cover;background:#F5F1EA;border:2px solid var(--gold);box-shadow:0 6px 16px -6px rgba(0,0,0,.5)}
 .mark .w{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.14em;color:var(--on-night)}
 .mark .w small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.3em;color:var(--on-night-muted);margin-top:-2px}
 .pill{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--on-night);border:1px solid var(--gold-soft);padding:10px 16px;border-radius:999px;display:inline-flex;align-items:center;gap:8px}
@@ -94,7 +94,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1
 .meta .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-muted)}
 .meta .v{font-weight:700;font-size:15px}
 .meta .v.gold{color:var(--chestnut)}
-.stamp{position:absolute;right:16px;bottom:18px;transform:rotate(-12deg);border:2px solid var(--chestnut);color:var(--chestnut);font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.2em;padding:6px 10px;border-radius:6px;text-transform:uppercase;opacity:.9}
+.stamp{display:inline-block;margin-top:18px;transform:rotate(-4deg);border:2px solid var(--chestnut);color:var(--chestnut);font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.2em;padding:6px 10px;border-radius:6px;text-transform:uppercase;opacity:.9}
 
 /* sections */
 section{padding-block:96px}
@@ -197,7 +197,7 @@ footer strong{color:var(--on-night);font-weight:700}
 <body>
 
 <header><div class="wrap">
-  <a class="mark" href="#top" aria-label="SAKB Global home"><span class="m">S</span><span class="w">SAKB<small>GLOBAL LTD</small></span></a>
+  <a class="mark" href="#top" aria-label="SAKB Global home"><img class="logo" src="1794229241380_logo.jpg" alt="SAKB Global logo" width="60" height="60"><span class="w">SAKB<small>GLOBAL</small></span></a>
   <a class="pill" href="#contact"><span class="live"></span><span class="lbl">Platform launching soon ·</span> Contact us</a>
 </div></header>
 
@@ -224,7 +224,7 @@ footer strong{color:var(--on-night);font-weight:700}
         </div>
         <div class="perf"></div>
         <div class="meta">
-          <div><div class="k">Shipper</div><div class="v">SAKB Global Ltd</div></div>
+          <div><div class="k">Shipper</div><div class="v">SAKB Global</div></div>
           <div><div class="k">Delivery</div><div class="v">1–3 days UK</div></div>
           <div><div class="k">Quality</div><div class="v">Inspected</div></div>
           <div><div class="k">Status</div><div class="v gold">In development</div></div>
@@ -239,7 +239,7 @@ footer strong{color:var(--on-night);font-weight:700}
     <div class="who">
       <div>
         <p class="big">We sell on major marketplaces every day, so we know what customers expect: products that match the photos, arrive quickly and last.</p>
-        <p class="body">SAKB Global Ltd is a UK online trading company. We work with checked suppliers, inspect goods before they ship, and keep stock in the UK so orders go out fast.</p>
+        <p class="body">SAKB Global is a UK online trading company. We work with checked suppliers, inspect goods before they ship, and keep stock in the UK so orders go out fast.</p>
       </div>
       <div class="facts">
         <div class="fact"><strong>UK stock</strong><span>Held in the UK for quick dispatch</span></div>
@@ -258,7 +258,7 @@ footer strong{color:var(--on-night);font-weight:700}
     <p class="intro">A platform for UK online sellers. List our UK-held products on your own store, and we pack and post each order for you with tracking.</p>
 
     <ol class="track" aria-label="Build progress">
-      <li class="done"><span class="pin"></span><span class="when">Sep 2026</span><h3>Company registered</h3><p>SAKB Global Ltd set up in the UK</p></li>
+      <li class="done"><span class="pin"></span><span class="when">Sep 2026</span><h3>Company registered</h3><p>SAKB Global set up in the UK</p></li>
       <li class="done"><span class="pin"></span><span class="when">Nov 2026</span><h3>Foundations</h3><p>Website and accounts in place</p></li>
       <li class="now"><span class="pin"></span><span class="when">Now</span><h3>Platform build</h3><p>Seller accounts, stock and orders</p></li>
       <li><span class="pin"></span><span class="when">Next</span><h3>Opening to sellers</h3><p>Approved UK sellers join first</p></li>
@@ -336,7 +336,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     return;
   }
   note.className = 'note';
-  note.textContent = 'Preview only: on the live site this message goes straight to our team.';
+  note.textContent = 'Our contact form is being set up. Please try again in a few days.';
 });
 </script>
 </body>
