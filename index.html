@@ -373,8 +373,52 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     note.textContent = 'Please add your name, a valid email and a message.';
     return;
   }
+  var btn = f.querySelector('button[type="submit"]');
+  btn.disabled = true;
   note.className = 'note';
-  note.textContent = 'Our contact form is being set up. Please try again in a few days.';
+  note.textContent = 'Sending…';
+  var data = {
+    name: f.name.value.trim(),
+    email: f.email.value.trim(),
+    company: f.company.value.trim() || null,
+    topic: f.topic.value,
+    message: f.message.value.trim()
+  };
+  // 1) Save a copy in Supabase (backup)
+  var save = fetch('https://ivmnswekxnsxxtygmvkd.supabase.co/rest/v1/contact_messages', {
+    method: 'POST',
+    headers: {
+      'apikey': 'sb_publishable_y3PkDPwQeXRIl7AEju_0cQ_NrS86Rr9',
+      'Content-Type': 'application/json',
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify(data)
+  }).then(function (r) { return r.ok; }).catch(function () { return false; });
+  // 2) Email the message to the team inbox
+  var mail = fetch('https://formsubmit.co/ajax/team@sakbglobal.co.uk', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: 'New website message: ' + data.topic,
+      _template: 'table',
+      Name: data.name,
+      email: data.email,
+      Company: data.company || '-',
+      'Interested in': data.topic,
+      Message: data.message
+    })
+  }).then(function (r) { return r.ok; }).catch(function () { return false; });
+  Promise.all([save, mail]).then(function (res) {
+    if (res[0] || res[1]) {
+      f.reset();
+      note.className = 'note';
+      note.textContent = 'Thank you! Your message has been sent. We will reply by email within 1–2 working days.';
+    } else {
+      note.className = 'note err';
+      note.textContent = 'Sorry, your message could not be sent. Please try again in a moment.';
+    }
+    btn.disabled = false;
+  });
 });
 
 (function(){
